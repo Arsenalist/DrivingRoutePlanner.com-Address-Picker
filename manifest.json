@@ -1,0 +1,38 @@
+{
+   "name":"Helps in using drivingrouteplanner.com",
+   "version":"1.1",
+   "permissions":[
+      "tabs",
+      "http://www.drivingrouteplanner.com/*",
+      "http://www.drivingrouteplanner.com/*"
+   ],
+   "page_action":{
+      "default_popup":"popup.html",
+      "default_title":"I'll help you fill out some forms on drivingrouteplanner.com.'.",
+      "default_icon":{
+         "19":"img/icon19.png",
+         "38":"img/icon38.png"
+      }
+   },
+   "manifest_version":2,
+   "content_scripts":[
+      {
+         "matches":[
+            "http://www.drivingrouteplanner.com/*"
+         ],
+         "js":[
+            "js/jquery.js"
+         ]
+      }
+   ],
+   "background":{
+      "scripts":[
+         "js/background.js"
+      ]
+   },
+   "icons":{
+      "16":"img/icon16.png",
+      "48":"img/icon48.png",
+      "128":"img/icon128.png"
+   }
+}
