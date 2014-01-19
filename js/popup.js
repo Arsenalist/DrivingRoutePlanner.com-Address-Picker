@@ -21,7 +21,10 @@ function createView() {
 				// step 1
 				if (step1) {
 					var v = $('input[type=radio]:checked').val();
-					if (v == 'start') populateStart(item);
+					if (v == 'start') {
+						populateStart(item);
+						$('input[type="radio"]:not(:checked)').prop("checked", true);						
+					}
 					if (v == 'end') populateEnd(item);	
 				// step 2
 				} else  {						
@@ -38,7 +41,7 @@ function createView() {
 
 function populateStart(value) {
 	chrome.tabs.executeScript(null, { 
-			code:"var elem = document.getElementById('fld_start_address'); elem.focus(); elem.value ='" + value + "'; elem.blur();"
+			code:"var elem = document.getElementById('fld_start_address'); elem.focus(); elem.value ='" + value + "'; elem.blur(); "
 		}
 	);
 }
